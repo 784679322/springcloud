@@ -34,7 +34,7 @@ public class HiController {
     public Object discover(  ) {
         List<String> list=client.getServices();
         System.out.println("**  **  ** **  **"+list);
-        List<ServiceInstance> serList=client.getInstances("MICROSERVICECLIUD-HI");
+        List<ServiceInstance> serList=client.getInstances("SERVICE-HI-8763");
 
         for(ServiceInstance element:serList){
             System.out.println(element.getServiceId()+"\t"+element.getHost()+"\t"+element.getPort()+"\t"+element.getUri());
