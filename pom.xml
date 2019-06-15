@@ -19,11 +19,15 @@
     </parent>
                                                                              
     <modules>
-        <module>eureka-server</module>
+        <module>eureka-7001</module>
+        <module>enreka-7002</module>
+        <module>eureka-7003</module>
         <module>service-hi</module>
         <module>service-ribbon</module>
+        <module>service-feign</module>
         <module>service-zuul</module>
-        <module>serice-feign</module>
+        <module>service-api</module>
+
 
     </modules>
 
@@ -44,10 +48,15 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+        <!--热部署-->
         <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>druid-spring-boot-starter</artifactId>
-            <version>1.1.0</version>
+            <groupId>org.springframework</groupId>
+            <artifactId>springloaded</artifactId>
+            <version>1.2.5.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
         </dependency>
     </dependencies>
 
@@ -86,7 +95,11 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <fork>true</fork>
+                </configuration>
             </plugin>
+
         </plugins>
     </build>
 

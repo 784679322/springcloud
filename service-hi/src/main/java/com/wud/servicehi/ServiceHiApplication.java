@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
 @EnableEurekaClient //本服务启动后会自动注册进eureka服务中
-@EnableDiscoveryClient//服务发现，对外暴露
+//@EnableDiscoveryClient//服务发现，对外暴露
 @RestController
 public class ServiceHiApplication {
 
