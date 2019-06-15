@@ -21,6 +21,7 @@ public class HiController {
     public String hi(@RequestParam String name  ) {
         return name;
     }
+
     @RequestMapping(value = "/user")
     public List<User> sayHi(  ) {
         System.out.println(userService.selectById().size());

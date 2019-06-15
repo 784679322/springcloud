@@ -1,4 +1,4 @@
-package com.wud.serviceribbon;
+package com.wud.serviceribbon.controller;
 
 import com.wud.serviceribbon.HelloService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +22,10 @@ public class HelloControler {
     @RequestMapping(value = "/discover")
     public Object get(){
         return restTemplate.getForObject(REST_URL_PREFIX+"/discover",Object.class);
+    }
+    @RequestMapping(value = "/user")
+    public Object user(){
+        return restTemplate.getForObject(REST_URL_PREFIX+"/user",Object.class);
     }
 
     @GetMapping(value = "/hi")
