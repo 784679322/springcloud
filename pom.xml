@@ -23,10 +23,12 @@
         <module>enreka-7002</module>
         <module>eureka-7003</module>
         <module>service-hi</module>
+        <module>service-hi2</module>
         <module>service-ribbon</module>
         <module>service-feign</module>
         <module>service-zuul</module>
         <module>service-api</module>
+
 
 
     </modules>

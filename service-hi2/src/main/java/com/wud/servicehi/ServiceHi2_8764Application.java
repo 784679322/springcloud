@@ -13,10 +13,10 @@ import org.springframework.web.bind.annotation.RestController;
 @EnableEurekaClient //本服务启动后会自动注册进eureka服务中
 @EnableDiscoveryClient//服务发现，对外暴露
 @RestController
-public class ServiceHiApplication {
+public class ServiceHi2_8764Application {
 
     public static void main(String[] args) {
-        SpringApplication.run( ServiceHiApplication.class, args );
+        SpringApplication.run( ServiceHi2_8764Application.class, args );
     }
 
     @Value("${server.port}")
