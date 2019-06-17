@@ -1,5 +1,5 @@
 server:
-  port: 8764
+  port: 8773
 
 eureka:
   client:
@@ -7,7 +7,7 @@ eureka:
 #      defaultZone: http://localhost:8761/eureka/
       defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
   instance:
-    instance-id: ribbon-8764
+    instance-id: ribbon-8773
     prefer-ip-address: true
 
 

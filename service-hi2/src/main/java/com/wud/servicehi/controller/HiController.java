@@ -22,8 +22,9 @@ public class HiController {
 
     @RequestMapping(value = "/hihi")
     public String hi(@RequestParam String name  ) {
-        return name;
+        return "这是第二个服务"+name;
     }
+
     @RequestMapping(value = "/user")
     public List<User> sayHi(  ) {
         System.out.println(userService.selectById().size());
@@ -37,7 +38,7 @@ public class HiController {
     public Object discover(  ) {
         List<String> list=client.getServices();
         System.out.println("**  **  ** **  **"+list);
-        List<ServiceInstance> serList=client.getInstances("SERVICE-HI-8763");
+        List<ServiceInstance> serList=client.getInstances("SERVICE-HI-8764");
 
         for(ServiceInstance element:serList){
             System.out.println(element.getServiceId()+"\t"+element.getHost()+"\t"+element.getPort()+"\t"+element.getUri());

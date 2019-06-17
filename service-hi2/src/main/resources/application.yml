@@ -1,5 +1,5 @@
 server:
-  port: 8773
+  port: 8764
 
 spring:
   application:
@@ -22,7 +22,7 @@ eureka:
 #      defaultZone: http://localhost:7001/eureka/                    # 单机
       defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
   instance:
-    instance-id: service-hi-8773
+    instance-id: service-hi-8764
     prefer-ip-address: true                                          #访问路劲允许显示ip
 
 info:                                                                #info跳转
