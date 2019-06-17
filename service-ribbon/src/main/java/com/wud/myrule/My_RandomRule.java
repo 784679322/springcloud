@@ -56,6 +56,8 @@ public class My_RandomRule extends AbstractLoadBalancerRule {
                     if(currentIndex>=upList.size()){
                         currentIndex=0;
                     }
+
+
                 }
 
 
