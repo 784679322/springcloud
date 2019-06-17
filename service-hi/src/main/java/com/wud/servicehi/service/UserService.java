@@ -1,4 +1,6 @@
-package com.wud.servicehi.controller;
+package com.wud.servicehi.service;
+
+import com.wud.cloud.Dto.User;
 
 import java.util.List;
 

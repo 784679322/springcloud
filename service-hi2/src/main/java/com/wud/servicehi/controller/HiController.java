@@ -1,6 +1,7 @@
 package com.wud.servicehi.controller;
 
 
+import com.wud.cloud.Dto.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;

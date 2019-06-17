@@ -1,5 +1,6 @@
 package com.wud.servicehi.controller;
 
+import com.wud.cloud.Dto.User;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
@@ -9,6 +10,6 @@ import java.util.List;
 public interface UserMapper {
 
     @Select("select * from user")
-    List< User> selectByPrimaryKey();
+    List<User> selectByPrimaryKey();
 
 }

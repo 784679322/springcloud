@@ -1,13 +1,12 @@
-package com.wud.servicehi.controller;
+package com.wud.servicehi.service;
 
 
+import com.wud.cloud.Dto.User;
+import com.wud.servicehi.dao.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.servlet.http.HttpServletResponse;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created by yu on 2019/1/9.

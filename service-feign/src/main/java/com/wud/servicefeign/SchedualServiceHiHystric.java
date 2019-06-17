@@ -1,7 +1,7 @@
 package com.wud.servicefeign;
 
 
-import com.wud.servicefeign.controller.User;
+import com.wud.cloud.Dto.User;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
