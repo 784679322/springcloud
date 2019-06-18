@@ -2,6 +2,7 @@ package com.wud.servicefeign.service;
 
 
 import com.wud.cloud.Dto.User;
+import com.wud.servicefeign.service.hystric.SchedualServiceRibbonHystric;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -11,7 +12,7 @@ import java.util.List;
 /**
  * 消费者再通过消费者去访问服务
  * */
-@FeignClient(value = "SERVICE-RIBBON")
+@FeignClient(value = "SERVICE-RIBBON",fallback = SchedualServiceRibbonHystric.class)
 public interface RibbonService {
 
     @RequestMapping(value = "/ribbon/user",method = RequestMethod.GET)
