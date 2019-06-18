@@ -2,7 +2,8 @@ package com.wud.servicefeign.controller;
 
 
 import com.wud.cloud.Dto.User;
-import com.wud.servicefeign.SchedualServiceHi;
+import com.wud.servicefeign.service.RibbonService;
+import com.wud.servicefeign.service.SchedualServiceHi;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -17,6 +18,8 @@ public class HiController {
     //编译器报错，无视。 因为这个Bean是在程序启动的时候注入的，编译器感知不到，所以报错。
     @Autowired
     SchedualServiceHi schedualServiceHi;
+    @Autowired
+    RibbonService ribbonService;
 
     @GetMapping(value = "/hi3")
     public String sayHi(@RequestParam String name) {
@@ -26,5 +29,10 @@ public class HiController {
     @GetMapping(value = "/list")
     public List<User> list(  ) {
         return schedualServiceHi.userList(  );
+    }
+
+    @GetMapping(value = "/toribbon")
+    public List<User> toribbon(  ) {
+        return ribbonService.userList(  );
     }
 }

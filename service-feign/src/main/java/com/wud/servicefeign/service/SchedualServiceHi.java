@@ -1,7 +1,8 @@
-package com.wud.servicefeign;
+package com.wud.servicefeign.service;
 
 
 import com.wud.cloud.Dto.User;
+import com.wud.servicefeign.service.hystric.SchedualServiceHiHystric;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

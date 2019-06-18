@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
 @EnableDiscoveryClient
 @EnableFeignClients
 //@ComponentScan("com.wud.servicefeign")
-@RibbonClient(name = "SERVICE-HI",configuration = MySelfRule.class)
+@RibbonClient(name = "SERVICE-HI",configuration = MySelfRule.class)//feign同时可以使用ribbon的负载均衡机制
 public class SericeFeignApplication {
 
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package com.wud.serviceribbon;
+package com.wud.serviceribbon.service;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,7 +1,8 @@
-package com.wud.servicefeign;
+package com.wud.servicefeign.service.hystric;
 
 
 import com.wud.cloud.Dto.User;
+import com.wud.servicefeign.service.SchedualServiceHi;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
