@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 @EnableEurekaClient
 @EnableDiscoveryClient
 @EnableFeignClients
-//@ComponentScan("com.wud.servicefeign")
+@ComponentScan("com.wud.cloud.service")
 @RibbonClient(name = "SERVICE-HI",configuration = MySelfRule.class)//feign同时可以使用ribbon的负载均衡机制
 public class SericeFeignApplication {
 
