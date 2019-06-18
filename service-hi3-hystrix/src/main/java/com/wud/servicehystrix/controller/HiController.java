@@ -24,40 +24,34 @@ public class HiController {
     DiscoveryClient client;
 
 
-    @RequestMapping(value = "/hihi")
+    @RequestMapping(value = "/name")
     @HystrixCommand(fallbackMethod = "hiError")
-    public String hi(@RequestParam String name  ) {
-
+    public String getName(@RequestParam String name  ) {
         if(name.equals("1")){
-            throw  new RuntimeException("_____??没有");
+            throw  new RuntimeException("name = 1 throw Exception, 调起服务端熔断器");
         }
         return name;
     }
 
     public String hiError(@RequestParam String name ){
-        return "这是Hystrix返回的值";
+        return "这是当 name=1 时, Hystrix熔断器返回的值";
     }
 
 
-    @RequestMapping(value = "/user")
-    public List<User> sayHi(  ) {
-        System.out.println(userService.selectById().size());
-
+    @RequestMapping(value = "/list")
+    public List<User> getList(  ) {
+        System.out.println("----->Hi3  getList");
         return userService.selectById();
     }
 
-//    @Autowired
-//    DiscoveryClient client;
     @RequestMapping(value = "/discover",method = RequestMethod.GET)
     public Object discover(  ) {
         List<String> list=client.getServices();
         System.out.println("**  **  ** **  **"+list);
         List<ServiceInstance> serList=client.getInstances("SERVICE-HI-8763");
-
         for(ServiceInstance element:serList){
             System.out.println(element.getServiceId()+"\t"+element.getHost()+"\t"+element.getPort()+"\t"+element.getUri());
         }
-
         return this.client;
     }
 }

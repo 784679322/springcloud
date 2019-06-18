@@ -21,15 +21,15 @@ public class HiController {
     DiscoveryClient client;
 
 
-    @RequestMapping(value = "/hihi")
-    public String hi(@RequestParam String name  ) {
+    @RequestMapping(value = "/name")
+    public String getname(@RequestParam String name  ) {
+        System.out.println("----->Hi2  getName");
         return "这是第二个服务"+name;
     }
 
-    @RequestMapping(value = "/user")
-    public List<User> sayHi(  ) {
-        System.out.println(userService.selectById().size());
-
+    @RequestMapping(value = "/list")
+    public List<User> getList(  ) {
+        System.out.println("----->Hi2  getList");
         return userService.selectById();
     }
 

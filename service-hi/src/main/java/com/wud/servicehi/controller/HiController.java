@@ -19,15 +19,15 @@ public class HiController {
     DiscoveryClient client;
 
 
-    @RequestMapping(value = "/hihi")
-    public String hi(@RequestParam String name  ) {
-        return name;
+    @RequestMapping(value = "/name")
+    public String getName(@RequestParam String name  ) {
+        System.out.println("----->Hi1  getName");
+        return "这是一个服务"+name;
     }
 
-    @RequestMapping(value = "/user")
-    public List<User> sayHi(  ) {
-        System.out.println(userService.selectById().size());
-
+    @RequestMapping(value = "/list")
+    public List<User> getList(  ) {
+        System.out.println("----->Hi1  getList");
         return userService.selectById();
     }
 
@@ -38,11 +38,9 @@ public class HiController {
         List<String> list=client.getServices();
         System.out.println("**  **  ** **  **"+list);
         List<ServiceInstance> serList=client.getInstances("SERVICE-HI-8763");
-
         for(ServiceInstance element:serList){
             System.out.println(element.getServiceId()+"\t"+element.getHost()+"\t"+element.getPort()+"\t"+element.getUri());
         }
-
         return this.client;
     }
 }
