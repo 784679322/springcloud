@@ -15,6 +15,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+/**
+ * 熔断返回默认值
+ */
 @RestController
 public class HiController {
 

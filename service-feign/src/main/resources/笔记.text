@@ -10,5 +10,7 @@ Hystrix 处理分布式系统的延迟和容错
 
 功能：降级，熔断，限流，实时监控
 
-
+feign:
+  hystrix:
+    enabled: true
 

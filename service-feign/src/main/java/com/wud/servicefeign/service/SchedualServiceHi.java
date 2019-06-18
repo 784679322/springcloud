@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
-//@FeignClient(value = "SERVICE-HI",fallback = SchedualServiceHiHystric.class)
-@FeignClient(value = "SERVICE-HI")
+@FeignClient(value = "SERVICE-HI",fallback = SchedualServiceHiHystric.class)
+//@FeignClient(value = "SERVICE-HI")
 public interface SchedualServiceHi {
     @RequestMapping(value = "/hihi",method = RequestMethod.GET)
     String sayHiFromClientOne(@RequestParam(value = "name") String name);
