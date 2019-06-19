@@ -2,18 +2,18 @@ package com.wud.servicefeign.service.hystric;
 
 
 import com.wud.cloud.Dto.User;
-import com.wud.servicefeign.service.RibbonService;
-import com.wud.servicefeign.service.SchedualServiceHi;
+import com.wud.servicefeign.service.ServiceRibbon;
+import com.wud.servicefeign.service.ServiceHi;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
 
 @Component
-public class SchedualServiceRibbonHystric implements RibbonService {
+public class ServiceRibbonHystric implements ServiceRibbon {
 
     @Autowired
-    SchedualServiceHi schedualServiceHi;
+    ServiceHi schedualServiceHi;
     @Override
     public List<User> userList() {
         System.out.println("-------->ribbon服务出错了！！");

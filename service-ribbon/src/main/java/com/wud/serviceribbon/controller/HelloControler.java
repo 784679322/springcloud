@@ -17,20 +17,20 @@ public class HelloControler {
     @Autowired
     RestTemplate restTemplate;
 
-    private  static String REST_URL_PREFIX="http://SERVICE-HI";
+
+    @GetMapping(value = "/name")
+    public String hi(@RequestParam String name) {
+        return helloService.getName( name );
+    }
+
+    @RequestMapping(value = "/list")
+    public Object user() {
+        return helloService.getList(  );
+    }
 
     @RequestMapping(value = "/discover")
     public Object get(){
-        return restTemplate.getForObject(REST_URL_PREFIX+"/discover",Object.class);
-    }
-    @RequestMapping(value = "/user")
-    public Object user(){
-        return restTemplate.getForObject(REST_URL_PREFIX+"/user",Object.class);
-    }
-
-    @GetMapping(value = "/hi")
-    public String hi(@RequestParam String name) {
-        return helloService.hiService( name );
+        return  helloService.getDiscover();
     }
 
 

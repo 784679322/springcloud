@@ -2,16 +2,16 @@ package com.wud.servicefeign.service.hystric;
 
 
 import com.wud.cloud.Dto.User;
-import com.wud.servicefeign.service.SchedualServiceHi;
+import com.wud.servicefeign.service.ServiceHi;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
 
 @Component
-public class SchedualServiceHiHystric implements SchedualServiceHi {
+public class ServiceHiHystric implements ServiceHi {
     @Override
     public String sayHiFromClientOne(String name) {
-        return "sorry "+name;
+        return "sorry 服务降级"+name;
     }
 
     @Override

@@ -2,6 +2,7 @@ package com.wud.servicehi.controller;
 
 
 import com.wud.cloud.Dto.User;
+import com.wud.cloud.service.ServiceHi;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
@@ -16,7 +17,7 @@ import java.util.List;
 public class HiController {
 
     @Autowired
-    UserService userService;
+    ServiceHi userService;
     @Autowired
     DiscoveryClient client;
 
@@ -24,13 +25,13 @@ public class HiController {
     @RequestMapping(value = "/name")
     public String getname(@RequestParam String name  ) {
         System.out.println("----->Hi2  getName");
-        return "这是第二个服务"+name;
+        return "这是第二个服务"+userService.getName(name);
     }
 
     @RequestMapping(value = "/list")
     public List<User> getList(  ) {
         System.out.println("----->Hi2  getList");
-        return userService.selectById();
+        return userService.userList();
     }
 
 //    @Autowired
