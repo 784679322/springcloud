@@ -16,6 +16,7 @@ import org.springframework.web.client.RestTemplate;
 @SpringBootApplication
 @EnableEurekaClient
 @EnableDiscoveryClient
+
 @EnableHystrix
 //加载自定义Ribbon配置类
 @RibbonClient(name = "SERVICE-HI",configuration = MySelfRule.class)
