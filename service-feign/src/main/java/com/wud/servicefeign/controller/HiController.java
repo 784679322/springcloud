@@ -2,8 +2,8 @@ package com.wud.servicefeign.controller;
 
 
 import com.wud.cloud.Dto.User;
-import com.wud.servicefeign.service.ServiceRibbon;
-import com.wud.servicefeign.service.ServiceHi;
+import com.wud.cloud.service.ServiceHi;
+import com.wud.cloud.service.ServiceRibbon;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;

@@ -30,7 +30,7 @@
         <module>service-zuul</module>
 
         <module>service-api</module>
-        <module>service-hi4</module>
+        <module>hystrix_dashboard</module>
 
 
     </modules>

@@ -1,9 +1,9 @@
-package com.wud.servicefeign.service.hystric;
+package com.wud.cloud.service.hystric;
 
 
 import com.wud.cloud.Dto.User;
-import com.wud.servicefeign.service.ServiceRibbon;
-import com.wud.servicefeign.service.ServiceHi;
+import com.wud.cloud.service.ServiceHi;
+import com.wud.cloud.service.ServiceRibbon;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
