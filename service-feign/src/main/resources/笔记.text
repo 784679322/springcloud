@@ -14,3 +14,14 @@ feign:
   hystrix:
     enabled: true
 
+
+如何让应用产生hystrix.stream
+需要actuator hystrix的相关jar包，需要@EnableCircuitBreaker相关注解
+
+1、网关服务zuul本来就有，不用额外配置
+2、使用feign调用的服务，需要打开hystrisfeign:hystrix:enabled: true
+3、非feign的springboot项目，使用resttemple调用服务时，需要以上相关包和相关注解，还需要@HystrixCommand来使用hystrix来支持。
+4、另外需要有调用任意hysrix接口，不然没有hystrix调用，访问hystrix.stream会一直ping，hystrix监控界面一直loading，查看hystrix.stream是没数据。
+
+监控界面监控非网关服务时，Circuit显示具体调用hystrix的类和对应方法，下面的thread pools显示具体的application-name
+
