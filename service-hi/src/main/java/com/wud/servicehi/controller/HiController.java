@@ -1,6 +1,7 @@
 package com.wud.servicehi.controller;
 
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.wud.cloud.Dto.User;
 import com.wud.servicehi.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,4 +44,20 @@ public class HiController {
         }
         return this.client;
     }
+
+
+    @RequestMapping(value = "/test")
+    @HystrixCommand(fallbackMethod = "hiError")
+    public String test(@RequestParam String name  ) {
+        if(name.equals("1")){
+            throw  new RuntimeException("name = 1 throw Exception, 调起服务端熔断器");
+        }
+        return name;
+    }
+
+    public String hiError(@RequestParam String name ){
+        return "这是当 name=1 时, Hystrix熔断器返回的值";
+    }
+
+
 }

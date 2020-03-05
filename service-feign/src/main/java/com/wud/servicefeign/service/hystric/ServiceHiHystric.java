@@ -12,15 +12,20 @@ import java.util.List;
 public class ServiceHiHystric implements ServiceHi {
 
 
-            @Override
-            public String sayHiFromClientOne(String name) {
-                return  "sorry 服务降级"+name;
-            }
+    @Override
+    public String sayHiFromClientOne(String name) {
+        return  "sorry 服务降级"+name;
+    }
 
-            @Override
-            public List<User> userList() {
-                return null;
-            }
+    @Override
+    public List<User> userList() {
+        return null;
+    }
+
+    @Override
+    public String error() {
+        return "error";
+    }
 
 
 }

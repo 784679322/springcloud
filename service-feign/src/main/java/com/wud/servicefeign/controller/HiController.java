@@ -29,11 +29,19 @@ public class HiController {
 
     @GetMapping(value = "/list")
     public List<User> list(  ) {
-        return schedualServiceHi.userList(  );
+        List<User> list=schedualServiceHi.userList(  );
+        return list;
+    }
+    @GetMapping(value = "/error")
+    public String error(  ) {
+        String s=schedualServiceHi.error(  );
+        return s;
     }
 
     @GetMapping(value = "/toribbon")
     public List<User> toribbon(  ) {
         return ribbonService.userList(  );
     }
+
+
 }

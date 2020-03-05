@@ -17,7 +17,6 @@ public class HelloService {
     public String getName(String name) {
         return restTemplate.getForObject(REST_URL_PREFIX+"/name?name="+name,String.class);
     }
-
     public String getNameError(String name) {
         return "hi,获取name失败"+name+",sorry,error!";
     }

@@ -19,8 +19,8 @@ spring:
 eureka:
   client:                                                            #客户端注册进eureka服务列表内
     serviceUrl:
-#      defaultZone: http://localhost:7001/eureka/                    # 单机
-      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+      defaultZone: http://eureka7001.com:7001/eureka/                    # 单机
+#      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
   instance:
     instance-id: service-hi-8763
     prefer-ip-address: true                                          #访问路劲允许显示ip

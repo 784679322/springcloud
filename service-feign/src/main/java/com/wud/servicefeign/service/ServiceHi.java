@@ -18,5 +18,8 @@ public interface ServiceHi {
 
     @RequestMapping(value = "/list",method = RequestMethod.GET)
     List<User> userList();
+
+    @RequestMapping(value = "/test",method = RequestMethod.GET)
+    String error();
 }
 
