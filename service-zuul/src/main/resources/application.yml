@@ -12,11 +12,19 @@ server:
 spring:
   application:
     name: service-zuul
+
+
+
+
+
 zuul:
   routes:
+    # 这里可以自定义
     api-a:
       path: /api-a/**
       serviceId: service-ribbon
     api-b:
       path: /api-b/**
       serviceId: service-feign
+  #网关前缀
+#  prefix: /api
