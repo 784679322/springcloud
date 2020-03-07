@@ -52,10 +52,14 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
                 })
                 .and()
                 //无需登陆
-                .authorizeRequests().antMatchers("/noauth").permitAll()
+                .authorizeRequests()
+                .antMatchers("/noauth")
+                .permitAll()
                 .and()
                 //拦截所有请求,并且检查sope
-                .authorizeRequests().anyRequest().access("isAuthenticated() && #oauth2.hasScope('app')");
+                .authorizeRequests()
+                .anyRequest()
+                .access("isAuthenticated() && #oauth2.hasScope('app')");
     }
 
     //静态内部返回类

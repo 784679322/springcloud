@@ -34,6 +34,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     MyUserDetailsService userDetailsService;
 
+    //websecurity用户密码和认证服务器客户端密码都需要加密算法
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
+
     //认证服务器需配合Security使用
     @Bean
     @Override
@@ -41,22 +47,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         return super.authenticationManagerBean();
     }
 
-    //websecurity用户密码和认证服务器客户端密码都需要加密算法
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-//        return new BCryptPasswordEncoder();
-        return new NoEncryptPasswordEncoder();
-    }
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         //验证用户权限
-        auth.userDetailsService(userDetailsService);
-        //也可以在内存中创建用户并为密码加密
-        // auth.inMemoryAuthentication()
-        //         .withUser("user").password(passwordEncoder().encode("123")).roles("USER")
-        //         .and()
-        //         .withUser("admin").password(passwordEncoder().encode("123")).roles("ADMIN");
+        auth
+                .userDetailsService(userDetailsService)
+                .passwordEncoder(passwordEncoder());
 
     }
 
@@ -80,16 +77,4 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 
 
-    public class NoEncryptPasswordEncoder implements PasswordEncoder {
-
-        @Override
-        public String encode(CharSequence charSequence) {
-            return (String) charSequence;
-        }
-
-        @Override
-        public boolean matches(CharSequence charSequence, String s) {
-            return s.equals((String) charSequence);
-        }
-    }
 }
