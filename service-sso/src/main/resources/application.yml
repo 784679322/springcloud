@@ -1,13 +1,13 @@
 server:
-  port: 8763
+  port: 8000
 
 spring:
   application:
-    name: service-hi
+    name: service-sso
   datasource:
 #    type: com.alibaba.druid.pool.DruidDataSource                     # 使用阿里的Druid连接池
     driver-class-name: com.mysql.jdbc.Driver                         #驱动包
-    url: jdbc:mysql://localhost:3306/test?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull
+    url: jdbc:mysql://localhost:3306/test2?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull
     username: root
     password: root
     dbcp2:
@@ -19,10 +19,10 @@ spring:
 eureka:
   client:                                                            #客户端注册进eureka服务列表内
     serviceUrl:
-      defaultZone: http://eureka7001.com:7001/eureka/                    # 单机
+      defaultZone: http://eureka7001.com:7001/eureka/
 #      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
   instance:
-    instance-id: service-hi-8763
+    instance-id: service-sso-8000
     prefer-ip-address: true                                          #访问路劲允许显示ip
 
 info:                                                                #info跳转

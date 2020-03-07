@@ -26,5 +26,14 @@ zuul:
     api-b:
       path: /api-b/**
       serviceId: service-feign
+    auth:
+      path: /auth/**
+      serviceId: service-sso
   #网关前缀
 #  prefix: /api
+
+
+
+security:
+  user:
+

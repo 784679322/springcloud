@@ -23,7 +23,7 @@
         <module>enreka-7002</module>
         <module>eureka-7003</module>
         <module>service-hi</module>
-        <module>service-hi2</module>
+        <module>service-sso</module>
         <module>service-hi3-hystrix</module>
         <module>service-ribbon</module>
         <module>service-feign</module>
